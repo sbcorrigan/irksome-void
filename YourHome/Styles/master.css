@@ -1,0 +1,22 @@
+﻿body {
+    width: 100%;
+    margin: auto;
+}
+
+#form1 {
+    width: 50%;
+    margin: 0 auto;
+}
+
+#otherLinks {
+    width: 90%;
+    margin: 0.5em;
+    padding: 0.5em;
+    border: solid;
+    border-color: black;
+    background-color: lightyellow;
+}
+
+#banner {
+    width: 100%;
+}

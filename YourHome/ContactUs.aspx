@@ -1,26 +1,54 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="ContactUs.aspx.cs" Inherits="ContactUs" %>
+﻿<%@ Page Title="Contact Us!" Language="C#" MasterPageFile="~/SiteTemplate.master" AutoEventWireup="true" CodeFile="ContactUs.aspx.cs" Inherits="ContactUs" %>
 
-<!DOCTYPE html>
+<asp:Content ID="Content1" ContentPlaceHolderID="headerContent" Runat="Server">
+    <title>Contact Us</title>
+</asp:Content>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title></title>
-</head>
-<body>
-    <form id="form1" runat="server">
-    <div>
-        <a href="Home.aspx"></a>
-    <a href="PhotoGallery.aspx">Photo Gallery</a>
-    <a href="AboutUs.aspx">About Us</a>
-    <a href="ContactUs.aspx">Contact Us!</a>
-    <a href="YourHouses.aspx">Your Wish List!</a>
-    <a href="HappyHomeowners.aspx">Success Stories!</a>
-    <a href="OurPartners.aspx"></a>
-    <br />
-           <p></p>Drop us a line if you'd like us to get back to you!</p><br />
-        <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
-        <asp:Button ID="ContactInfo" runat="server" Text="Submit Info" />
-    </div>
-    </form>
-</body>
-</html>
+<asp:Content ID="Content2" ContentPlaceHolderID="bodyContent" Runat="Server">
+     
+    <h1>Contact Us</h1>
+    <span id="contentText">
+        If you'd like to talk with us but don't feel like creating an account right now, leave us a message!
+        <br /><br />
+        <label for="txtReferenceNumber">Reference Number: </label> &nbsp;&nbsp;
+        <asp:TextBox ID="txtReferenceNumber" runat="server"></asp:TextBox> &nbsp;&nbsp;
+        <asp:RequiredFieldValidator ID="vldReferenceNumber" runat="server" 
+                                    ControlToValidate="txtReferenceNumber"
+                                    ErrorMessage="Reference Number Required"
+                                    ForeColor="Red" Display="Dynamic">
+        </asp:RequiredFieldValidator>
+        <br /><br />
+
+        <label for="txtfirstName">First Name: </label> &nbsp;&nbsp;
+        <asp:TextBox ID="txtFirstName" runat="server"></asp:TextBox> &nbsp;&nbsp;
+        <asp:RequiredFieldValidator ID="vldFirstName" runat="server" 
+                                    ControlToValidate="txtFirstName"
+                                    ErrorMessage="Please enter your first name"
+                                    ForeColor="Red" Display="Dynamic">
+        </asp:RequiredFieldValidator>
+        <br /><br />
+            
+        <label for="txtLastName">Last Name: </label> &nbsp;&nbsp;
+        <asp:TextBox ID="txtLastName" runat="server"></asp:TextBox> &nbsp;&nbsp;
+        <asp:RequiredFieldValidator ID="vldLastName" runat="server" 
+                                    ControlToValidate="txtLastName"
+                                    ErrorMessage="Please enter your last name"
+                                    ForeColor="Red" Display="Dynamic">
+        </asp:RequiredFieldValidator>
+        <br /><br />
+
+        <label for="txtMessage">How can we help you? </label> &nbsp;&nbsp;
+        <asp:TextBox ID="txtMessage" runat="server"></asp:TextBox> &nbsp;&nbsp;
+        <asp:RequiredFieldValidator ID="vldMessage" runat="server" 
+                                    ControlToValidate="txtMessage"
+                                    ErrorMessage="Please write your message"
+                                    ForeColor="Red" Display="Dynamic">
+        </asp:RequiredFieldValidator>
+        <br /><br />
+        
+        <asp:Button ID="btnSubmit" runat="server" Text="Send" OnClick="btnSubmit_Click" />
+
+        <br /><br />
+        
+    </span><br />
+</asp:Content>

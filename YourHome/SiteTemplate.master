@@ -1,0 +1,53 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="SiteTemplate.master.cs" Inherits="SiteTemplate" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder id="headerContent" runat="server">
+    </asp:ContentPlaceHolder>
+    <link href="Styles/master.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div>
+        <img id="banner" src = "Images/banner.jpg" alt = "Banner" /><br />
+        <asp:ContentPlaceHolder id="bodyContent" runat="server">\
+        </asp:ContentPlaceHolder>
+        <div id="otherLinks">
+            <b>OTHER LINKS</b><br />
+            <asp:ContentPlaceHolder ID="OtherLinksContent" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+        <br />
+        <span><i>This is a footer.</i></span>
+    </div>
+    <div>
+        <asp:LoginView ID="login" runat="server">
+            <AnonymousTemplate>
+                <h2>You are anonymous</h2>
+                Why don't you <asp:LoginStatus ID="LoginStatus1" runat="server" />?
+            </AnonymousTemplate>
+            <RoleGroups>
+                <asp:RoleGroup Roles="user">
+                    <ContentTemplate>
+                        <p>If you can see this, you are a member of the user role.</p>
+                        <p>Change your password <a href="/AccountPages/ChangePassword.aspx">here</a></p>
+                        <p>Go to <a href="/AccountPages/MyAccount.aspx">My Account</a></p>
+                    </ContentTemplate>
+                </asp:RoleGroup>
+                <asp:RoleGroup Roles="admin">
+                    <ContentTemplate>
+                        <p>Congratulations, you are an administrator.</p>
+                        <p>Admin Info:</p>
+                        <a href="/AdminPages/AddUsers.aspx">Add Users</a>
+                        <a href="/AdminPages/ManageUsers.aspx">Manage Users</a>
+                    </ContentTemplate>
+                </asp:RoleGroup>
+            </RoleGroups>
+        </asp:LoginView>
+    </div>
+    </form>
+</body>
+</html>

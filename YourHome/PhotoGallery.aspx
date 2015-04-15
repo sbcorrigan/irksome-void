@@ -1,25 +1,14 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="PhotoGallery.aspx.cs" Inherits="PhotoGallery" %>
+﻿<%@ Page Title="Available Homes" Language="C#" MasterPageFile="SiteTemplate.master" AutoEventWireup="true" CodeFile="PhotoGallery.aspx.cs" Inherits="PhotoGallery" %>
 
-<!DOCTYPE html>
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title></title>
-</head>
-<body>
-    <form id="form1" runat="server">
-    <div>
-        <a href="Home.aspx"></a>
-    <a href="PhotoGallery.aspx">Photo Gallery</a>
-    <a href="AboutUs.aspx">About Us</a>
-    <a href="ContactUs.aspx">Contact Us!</a>
-    <a href="YourHouses.aspx">Your Wish List!</a>
-    <a href="HappyHomeowners.aspx">Success Stories!</a>
-    <a href="OurPartners.aspx"></a>
-
-    </div>
-         <div><br /><br />
-        Here are some of our available homes! More to come soon!
+<asp:Content ID="Content1" ContentPlaceHolderID="headerContent" Runat="Server">
+    <title>Photo Gallery</title>
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="bodyContent" Runat="Server">
+     
+    <h1>Photo Gallery</h1>
+    <span id="contentText">
+         <br /><br />
+            Here are some of our available homes! More to come soon!
             <br /><br /><br />
              <img src="Images/CrocodileHouse.jpg" />
             <p>Here's a house. Embrace your lifelong dream of living in a giant crocodile's tummy... with a T1 line! Interested? Click!</p>
@@ -47,7 +36,8 @@
             <br /><br /><br />
              <img src="Images/AirplaneHouse.jpg" />
             <p>Here's a house. DOES NOT ACTUALLY FLY. It can be used as a boat though. Totally seaworthy. Interested? Click!</p>
-        </div>
-    </form>
-</body>
-</html>
+        
+    <br /><br />
+    </span><br />
+</asp:Content>
+

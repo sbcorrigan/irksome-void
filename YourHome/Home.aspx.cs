@@ -11,4 +11,11 @@ public partial class Home : System.Web.UI.Page
     {
 
     }
+    protected void searchButton_Click(object sender, EventArgs e)
+    {
+        if (Page.IsValid)
+        {
+            Response.Redirect("~/PhotoGalery.aspx");
+        }
+    }
 }

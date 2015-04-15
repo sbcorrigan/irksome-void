@@ -1,24 +1,26 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Home.aspx.cs" Inherits="Home" %>
+﻿<%--Michael Tan Liao, Hubaab Mujtaba, Sean Corrigan - Project--%>
 
-<!DOCTYPE html>
+<%@ Page Title="Home" Language="C#" MasterPageFile="~/SiteTemplate.master" AutoEventWireup="true" CodeFile="Home.aspx.cs" Inherits="Home" %>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title></title>
-</head>
-<body>
-    <form id="form1" runat="server">
-    <div>
-        <a href="Home.aspx"></a>
-    <a href="PhotoGallery.aspx">Photo Gallery</a>
-    <a href="AboutUs.aspx">About Us</a>
-    <a href="ContactUs.aspx">Contact Us!</a>
-    <a href="YourHouses.aspx">Your Wish List!</a>
-    <a href="HappyHomeowners.aspx">Success Stories!</a>
-    <a href="OurPartners.aspx"></a>
+<asp:Content ID="Content1" ContentPlaceHolderID="headerContent" Runat="Server">
+    <title>Home Page</title>
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="bodyContent" Runat="Server">
+             
+    <br /><br />
+    <asp:Label ID="searchLabel" runat="server">"Find your home today!"</asp:Label><br />
+    <asp:TextBox ID="searchText" runat="server" placeHolder="Search state" ></asp:TextBox>
+        <asp:Button ID="searchButton" runat="server" Text="Find My Home" OnClick="searchButton_Click"/>
+    <asp:RequiredFieldValidator runat="server" ID="srchVld" ControlToValidate="searchText"
+        ErrorMessage="You must enter a state." ForeColor="Red"></asp:RequiredFieldValidator>
 
-            Welcome to Your Home! Please explore the site! 
+    <div id="summary" style="background-color:#fcb040">
+        <header>"How we got started"</header>
+        <span id="homeSpan">Your Home Real Estate started with the dream of becoming <br />
+            the most convenient real estate company in the market...
+             </span><br />
+        <a href="AboutUs.aspx" id="abtlink">Learn more about us</a>
     </div>
-    </form>
-</body>
-</html>
+   
+   
+</asp:Content>

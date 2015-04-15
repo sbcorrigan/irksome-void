@@ -1,24 +1,12 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="ThankYou.aspx.cs" Inherits="ThankYou" %>
+﻿<%@ Page Title="Thank You!" Language="C#" MasterPageFile="SiteTemplate.master" AutoEventWireup="true" CodeFile="ThankYou.aspx.cs" Inherits="ThankYou" %>
 
-<!DOCTYPE html>
+<asp:Content ID="Content1" ContentPlaceHolderID="headerContent" Runat="Server">
+    <title>Thank You</title>
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="bodyContent" Runat="Server">
+   
+    <span id="contentText">
+        Thank you for your submission!
+    </span><br />
+</asp:Content>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title></title>
-</head>
-<body>
-    <form id="form1" runat="server">
-    <div>
-        <a href="Home.aspx"></a>
-    <a href="PhotoGallery.aspx">Photo Gallery</a>
-    <a href="AboutUs.aspx">About Us</a>
-    <a href="ContactUs.aspx">Contact Us!</a>
-    <a href="YourHouses.aspx">Your Wish List!</a>
-    <a href="HappyHomeowners.aspx">Success Stories!</a>
-    <a href="OurPartners.aspx"></a>
-
-            THank you for your submission, someone will get in contact with you as soon as possible!
-    </div>
-    </form>
-</body>
-</html>
